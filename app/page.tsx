@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLocale, useMessages } from "./i18n/context";
+import ProjectGallery from "./components/ProjectGallery";
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -457,17 +458,24 @@ function Skills() {
 
 // ─── Projects ────────────────────────────────────────────────────────────────
 
+type ProjectItem = {
+  title: string;
+  description: string;
+  focus: string;
+  tags: string[];
+  color: string;
+  images: string[];
+  repo: string;
+};
+
 function Projects() {
   const { t } = useLocale();
   const tm = useMessages();
   const raw = tm("projectItems");
-  const items = (Array.isArray(raw) ? raw : []) as {
-    title: string;
-    description: string;
-    focus: string;
-    tags: string[];
-    color: string;
-  }[];
+  const items = (Array.isArray(raw) ? raw : []) as ProjectItem[];
+  const [galleryOpen, setGalleryOpen] = useState<string | null>(null);
+
+  const activeProject = items.find((p) => p.title === galleryOpen);
 
   return (
     <section id="projects" style={{ padding: "7rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
@@ -517,7 +525,7 @@ function Projects() {
                 <p style={{ color: "#9CA3AF", lineHeight: 1.75, marginBottom: "1.25rem", fontSize: "0.93rem" }}>
                   {project.description}
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.25rem" }}>
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -534,11 +542,65 @@ function Projects() {
                     </span>
                   ))}
                 </div>
+                <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                  {project.images && project.images.length > 0 && (
+                    <button
+                      onClick={() => setGalleryOpen(project.title)}
+                      style={{
+                        background: "transparent",
+                        color: project.color,
+                        border: `1px solid ${project.color}44`,
+                        padding: "0.5rem 1rem",
+                        borderRadius: "6px",
+                        fontSize: "0.8rem",
+                        fontWeight: 600,
+                        cursor: "pointer",
+                        transition: "all 0.2s",
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget).style.background = `${project.color}18`; (e.currentTarget).style.borderColor = project.color; }}
+                      onMouseLeave={(e) => { (e.currentTarget).style.background = "transparent"; (e.currentTarget).style.borderColor = `${project.color}44`; }}
+                    >
+                      {t("projects.view_gallery")}
+                    </button>
+                  )}
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        background: "transparent",
+                        color: "#F0F0F5",
+                        border: "1px solid #1E1E2E",
+                        padding: "0.5rem 1rem",
+                        borderRadius: "6px",
+                        fontSize: "0.8rem",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                        transition: "all 0.2s",
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget).style.borderColor = "#3B82F6"; (e.currentTarget).style.color = "#3B82F6"; }}
+                      onMouseLeave={(e) => { (e.currentTarget).style.borderColor = "#1E1E2E"; (e.currentTarget).style.color = "#F0F0F5"; }}
+                    >
+                      {t("projects.view_repo")}
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </FadeIn>
         ))}
       </div>
+
+      {activeProject && (
+        <ProjectGallery
+          key={activeProject.title}
+          images={activeProject.images}
+          projectTitle={activeProject.title}
+          isOpen={galleryOpen === activeProject.title}
+          onClose={() => setGalleryOpen(null)}
+        />
+      )}
     </section>
   );
 }

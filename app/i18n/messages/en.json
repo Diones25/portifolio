@@ -38,7 +38,11 @@
   },
   "projects": {
     "label": "projects",
-    "title": "Selected Work"
+    "title": "Selected Work",
+    "view_gallery": "View Gallery",
+    "view_repo": "Repository",
+    "gallery_close": "Close",
+    "gallery_of": "of"
   },
   "projectItems": [
     {
@@ -46,28 +50,36 @@
       "description": "Full-featured platform with video, audio, and text communication channels. Built with WebRTC for peer-to-peer connections and Socket.IO for signaling and presence.",
       "focus": "Real-time • P2P • WebSockets",
       "tags": ["WebRTC", "Socket.IO", "NestJS", "React"],
-      "color": "#3B82F6"
+      "color": "#3B82F6",
+      "images": ["/projects/real-time-comms/1.svg", "/projects/real-time-comms/2.svg", "/projects/real-time-comms/3.svg"],
+      "repo": ""
     },
     {
       "title": "Banking API",
       "description": "Secure RESTful API for financial operations with robust authentication flows, JWT refresh token rotation, and Swagger documentation for enterprise consumers.",
       "focus": "Auth • Security • API Design",
       "tags": ["NestJS", "PostgreSQL", "JWT", "Docker", "Swagger"],
-      "color": "#8B5CF6"
+      "color": "#8B5CF6",
+      "images": ["/projects/banking-api/1.svg", "/projects/banking-api/2.svg"],
+      "repo": ""
     },
     {
       "title": "Microservices Platform",
       "description": "Distributed system with event-driven communication between independent services. Each service owns its database and communicates asynchronously via message queues.",
       "focus": "Distributed Systems • Event-Driven",
       "tags": ["NestJS", "RabbitMQ", "Docker", "PostgreSQL"],
-      "color": "#10B981"
+      "color": "#10B981",
+      "images": ["/projects/microservices/1.svg", "/projects/microservices/2.svg", "/projects/microservices/3.svg"],
+      "repo": ""
     },
     {
       "title": "Movie Application",
       "description": "Performance-first movie discovery app consuming the TMDB API. Built with Next.js for optimal SEO using hybrid rendering — SSG for popular pages, SSR for dynamic routes.",
       "focus": "SEO • SSR • SSG • Performance",
       "tags": ["Next.js", "React", "TMDB API"],
-      "color": "#F59E0B"
+      "color": "#F59E0B",
+      "images": ["/projects/movie-app/1.svg", "/projects/movie-app/2.svg"],
+      "repo": ""
     }
   ],
   "experience": {

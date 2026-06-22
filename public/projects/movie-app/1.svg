@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0A0A0F"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#13131A" stroke="#1E1E2E" stroke-width="1"/>
+  <rect x="60" y="60" width="680" height="40" rx="8" fill="#1E1E2E"/>
+  <text x="80" y="86" font-family="monospace" font-size="13" fill="#F0F0F5" font-weight="bold">🎬 Movie Discovery</text>
+  <input x="600" y="65" width="120" height="30" rx="6" fill="#0A0A0F" stroke="#1E1E2E" stroke-width="1"/>
+  <text x="660" y="86" font-family="monospace" font-size="11" fill="#6B7280" text-anchor="middle">Search...</text>
+  <rect x="60" y="120" width="160" height="220" rx="8" fill="#1E1E2E" opacity="0.6"/>
+  <rect x="75" y="135" width="130" height="140" rx="6" fill="#0A0A0F" opacity="0.5"/>
+  <text x="140" y="200" font-family="monospace" font-size="18" fill="#F59E0B" text-anchor="middle">🎬</text>
+  <text x="140" y="300" font-family="monospace" font-size="11" fill="#9CA3AF" text-anchor="middle">Inception</text>
+  <text x="140" y="318" font-family="monospace" font-size="9" fill="#6B7280" text-anchor="middle">2010 · Sci-Fi</text>
+  <rect x="240" y="120" width="160" height="220" rx="8" fill="#1E1E2E" opacity="0.6"/>
+  <rect x="255" y="135" width="130" height="140" rx="6" fill="#0A0A0F" opacity="0.5"/>
+  <text x="320" y="200" font-family="monospace" font-size="18" fill="#F59E0B" text-anchor="middle">🎬</text>
+  <text x="320" y="300" font-family="monospace" font-size="11" fill="#9CA3AF" text-anchor="middle">Interstellar</text>
+  <text x="320" y="318" font-family="monospace" font-size="9" fill="#6B7280" text-anchor="middle">2014 · Sci-Fi</text>
+  <rect x="420" y="120" width="160" height="220" rx="8" fill="#1E1E2E" opacity="0.6"/>
+  <rect x="435" y="135" width="130" height="140" rx="6" fill="#0A0A0F" opacity="0.5"/>
+  <text x="500" y="200" font-family="monospace" font-size="18" fill="#F59E0B" text-anchor="middle">🎬</text>
+  <text x="500" y="300" font-family="monospace" font-size="11" fill="#9CA3AF" text-anchor="middle">The Matrix</text>
+  <text x="500" y="318" font-family="monospace" font-size="9" fill="#6B7280" text-anchor="middle">1999 · Action</text>
+  <rect x="600" y="120" width="160" height="220" rx="8" fill="#1E1E2E" opacity="0.6"/>
+  <rect x="615" y="135" width="130" height="140" rx="6" fill="#0A0A0F" opacity="0.5"/>
+  <text x="680" y="200" font-family="monospace" font-size="18" fill="#F59E0B" text-anchor="middle">🎬</text>
+  <text x="680" y="300" font-family="monospace" font-size="11" fill="#9CA3AF" text-anchor="middle">Dune</text>
+  <text x="680" y="318" font-family="monospace" font-size="9" fill="#6B7280" text-anchor="middle">2021 · Sci-Fi</text>
+  <text x="400" y="480" font-family="monospace" font-size="11" fill="#4B5563" text-anchor="middle">Screenshot 1</text>
+</svg>
