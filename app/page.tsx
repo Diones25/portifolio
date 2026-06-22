@@ -806,8 +806,8 @@ function Contact() {
       <FadeIn delay={0.2}>
         <div style={{ marginTop: "2rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           {[
-            { label: t("contact.github"), url: "https://github.com/dionesalves", icon: "⌥" },
-            { label: t("contact.linkedin"), url: "https://linkedin.com/in/dionesalves", icon: "in" },
+            { label: t("contact.github"), url: "https://github.com/Diones25", icon: "⌥" },
+            { label: t("contact.linkedin"), url: "https://www.linkedin.com/in/diones-pereira-alves-31bb3969/", icon: "in" },
           ].map((link) => (
             <a
               key={link.label}
