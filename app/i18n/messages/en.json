@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "about": "about",
+    "skills": "skills",
+    "projects": "projects",
+    "experience": "experience",
+    "contact": "contact"
+  },
+  "hero": {
+    "greeting": "~/hello",
+    "name": "Diones Alves",
+    "title": "Full Stack Software Engineer",
+    "description": "4+ years building enterprise-grade applications, REST APIs, and cloud-based solutions. Currently crafting large-scale financial systems at",
+    "company": "GFT Technologies",
+    "cta_projects": "View Projects →",
+    "cta_contact": "Get in Touch"
+  },
+  "about": {
+    "label": "about",
+    "title": "Who I am",
+    "p1": "I'm a Full Stack Software Engineer based in Brazil with over 4 years of experience delivering production-grade software for enterprise clients. My work spans backend systems, REST APIs, microservices architecture, and modern frontend applications.",
+    "p2_before": "At",
+    "p2_company": "GFT Technologies",
+    "p2_after": ", I work on large-scale financial systems and banking platforms where reliability, security, and performance are non-negotiable. I care deeply about clean architecture, SOLID principles, and writing code that teams can evolve with confidence.",
+    "p3": "I hold certifications in both AWS and Azure, and I'm comfortable working across the full stack — from database schema design to pixel-perfect UIs.",
+    "stat_years_label": "Years of Experience",
+    "stat_years_value": "4+",
+    "stat_role_label": "Current Role",
+    "stat_role_value": "Software Engineer @ GFT",
+    "stat_certs_label": "Certifications",
+    "stat_certs_value": "AWS + Azure",
+    "stat_location_label": "Location",
+    "stat_location_value": "Brazil 🇧🇷"
+  },
+  "skills": {
+    "label": "skills",
+    "title": "Technical Stack"
+  },
+  "projects": {
+    "label": "projects",
+    "title": "Selected Work"
+  },
+  "projectItems": [
+    {
+      "title": "Real-Time Communication Platform",
+      "description": "Full-featured platform with video, audio, and text communication channels. Built with WebRTC for peer-to-peer connections and Socket.IO for signaling and presence.",
+      "focus": "Real-time • P2P • WebSockets",
+      "tags": ["WebRTC", "Socket.IO", "NestJS", "React"],
+      "color": "#3B82F6"
+    },
+    {
+      "title": "Banking API",
+      "description": "Secure RESTful API for financial operations with robust authentication flows, JWT refresh token rotation, and Swagger documentation for enterprise consumers.",
+      "focus": "Auth • Security • API Design",
+      "tags": ["NestJS", "PostgreSQL", "JWT", "Docker", "Swagger"],
+      "color": "#8B5CF6"
+    },
+    {
+      "title": "Microservices Platform",
+      "description": "Distributed system with event-driven communication between independent services. Each service owns its database and communicates asynchronously via message queues.",
+      "focus": "Distributed Systems • Event-Driven",
+      "tags": ["NestJS", "RabbitMQ", "Docker", "PostgreSQL"],
+      "color": "#10B981"
+    },
+    {
+      "title": "Movie Application",
+      "description": "Performance-first movie discovery app consuming the TMDB API. Built with Next.js for optimal SEO using hybrid rendering — SSG for popular pages, SSR for dynamic routes.",
+      "focus": "SEO • SSR • SSG • Performance",
+      "tags": ["Next.js", "React", "TMDB API"],
+      "color": "#F59E0B"
+    }
+  ],
+  "experience": {
+    "label": "experience",
+    "title": "Where I've Worked",
+    "current": "Current",
+    "certifications_title": "Certifications",
+    "cert_aws": "AWS Certified",
+    "cert_azure": "Azure Certified",
+    "cert_subtitle": "Cloud Certification",
+    "items": [
+      {
+        "company": "GFT Technologies",
+        "role": "Backend Developer",
+        "type": "Full-time",
+        "start": "Jun 2024",
+        "end": "Present",
+        "duration": "2 yrs 1 mo",
+        "location": "",
+        "description": "Development and maintenance of APIs using Spring Boot, with implementation of messaging flows via Kafka and RabbitMQ for integration with legacy mainframe systems. Working in a large-scale corporate environment in the banking sector, ensuring scalability, resilience, and low latency in service communication processes.",
+        "skills": "Spring Framework, Apache Kafka and 9 more skills"
+      },
+      {
+        "company": "SIS Soluções Integradas de Sistemas",
+        "role": "Systems Analyst",
+        "type": "Full-time",
+        "start": "Sep 2021",
+        "end": "Jun 2024",
+        "duration": "2 yrs 10 mos",
+        "location": "Alphaville | Barueri | SP",
+        "description": "Worked on maintaining and evolving a BFF (Backend for Frontend) for a large banking system using Node.js and TypeScript. Responsible for fixing incidents, optimizing performance, and implementing continuous improvements in legacy projects of high business relevance.",
+        "skills": "Spring Framework, Bitbucket and 22 more skills"
+      },
+      {
+        "company": "IF Mais",
+        "role": "Frontend Developer",
+        "type": "Part-time",
+        "start": "Jun 2021",
+        "end": "Aug 2021",
+        "duration": "3 mos",
+        "location": "Tabuleiro do Norte, CE, Brazil · Remote",
+        "description": "Integrated React.js applications with APIs developed in Laravel, ensuring efficient communication between frontend and backend. Created responsive web interfaces focused on good user experience.",
+        "skills": "CSS, Styled-components and 7 more skills"
+      },
+      {
+        "company": "Nupreds",
+        "role": "Frontend Developer",
+        "type": "Internship",
+        "start": "Feb 2021",
+        "end": "Jun 2021",
+        "duration": "5 mos",
+        "location": "Tianguá, CE, Brazil · Remote",
+        "description": "Developed React.js interfaces with advanced functionality implementation through integration with external libraries, ensuring scalability and frontend quality.",
+        "skills": "Node.js, JavaScript and 3 more skills"
+      },
+      {
+        "company": "Laranet Telecom",
+        "role": "Full Stack Developer",
+        "type": "Full-time",
+        "start": "Apr 2020",
+        "end": "Oct 2020",
+        "duration": "7 mos",
+        "location": "Tianguá, CE, Brazil · On-site",
+        "description": "Worked as a full stack developer, creating REST APIs in PHP and integrating them with the React.js frontend. Responsible for implementing end-to-end functionalities and ensuring efficient communication between application layers.",
+        "skills": "Backend development, PHP and 7 more skills"
+      }
+    ]
+  },
+  "contact": {
+    "label": "contact",
+    "title": "Let's Build Something",
+    "subtitle": "Open to new opportunities, freelance projects, or just a technical conversation. Drop a message — I respond within 24 hours.",
+    "email_label": "Email",
+    "copy_btn": "Copy Email",
+    "copied_btn": "✓ Copied!",
+    "send_btn": "Send Email →",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "credit": "Built with Next.js + TypeScript"
+  },
+  "nav_cta": "Contact",
+  "tech_badges": ["Java", "Spring Boot", "Node.js", "NestJS", "React", "Next.js", "TypeScript", "AWS", "Docker"]
+}

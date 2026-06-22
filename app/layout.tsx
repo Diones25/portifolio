@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LocaleProvider } from "./i18n/context";
 
 export const metadata: Metadata = {
   title: "Diones Alves — Full Stack Software Engineer",
@@ -36,7 +37,7 @@ export default function RootLayout({
         />
       </head>
       <body style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#0A0A0F', color: '#F0F0F5', margin: 0 }}>
-        {children}
+        <LocaleProvider>{children}</LocaleProvider>
       </body>
     </html>
   );

@@ -1,60 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const NAV_ITEMS = [
-  { label: "about", href: "#about" },
-  { label: "skills", href: "#skills" },
-  { label: "projects", href: "#projects" },
-  { label: "experience", href: "#experience" },
-  { label: "contact", href: "#contact" },
-];
-
-const SKILLS = {
-  Backend: ["Java", "Spring Boot", "Node.js", "NestJS", "Express", "REST APIs", "Microservices"],
-  Frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
-  Cloud: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD"],
-  Database: ["PostgreSQL", "MySQL", "MongoDB"],
-  Architecture: ["Clean Architecture", "SOLID", "Event-Driven Architecture"],
-};
-
-const PROJECTS = [
-  {
-    title: "Real-Time Communication Platform",
-    description:
-      "Full-featured platform with video, audio, and text communication channels. Built with WebRTC for peer-to-peer connections and Socket.IO for signaling and presence.",
-    tags: ["WebRTC", "Socket.IO", "NestJS", "React"],
-    focus: "Real-time • P2P • WebSockets",
-    color: "#3B82F6",
-  },
-  {
-    title: "Banking API",
-    description:
-      "Secure RESTful API for financial operations with robust authentication flows, JWT refresh token rotation, and Swagger documentation for enterprise consumers.",
-    tags: ["NestJS", "PostgreSQL", "JWT", "Docker", "Swagger"],
-    focus: "Auth • Security • API Design",
-    color: "#8B5CF6",
-  },
-  {
-    title: "Microservices Platform",
-    description:
-      "Distributed system with event-driven communication between independent services. Each service owns its database and communicates asynchronously via message queues.",
-    tags: ["NestJS", "RabbitMQ", "Docker", "PostgreSQL"],
-    focus: "Distributed Systems • Event-Driven",
-    color: "#10B981",
-  },
-  {
-    title: "Movie Application",
-    description:
-      "Performance-first movie discovery app consuming the TMDB API. Built with Next.js for optimal SEO using hybrid rendering — SSG for popular pages, SSR for dynamic routes.",
-    tags: ["Next.js", "React", "TMDB API"],
-    focus: "SEO • SSR • SSG • Performance",
-    color: "#F59E0B",
-  },
-];
+import { motion, useInView } from "framer-motion";
+import { useLocale, useMessages } from "./i18n/context";
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -102,9 +50,18 @@ function FadeIn({
 
 // ─── Nav ─────────────────────────────────────────────────────────────────────
 
+const NAV_ITEMS = [
+  { key: "about", href: "#about" },
+  { key: "skills", href: "#skills" },
+  { key: "projects", href: "#projects" },
+  { key: "experience", href: "#experience" },
+  { key: "contact", href: "#contact" },
+];
+
 function Nav() {
   const [active, setActive] = useState("about");
   const [scrolled, setScrolled] = useState(false);
+  const { locale, setLocale, t } = useLocale();
 
   useEffect(() => {
     const onScroll = () => {
@@ -121,6 +78,10 @@ function Nav() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const toggleLocale = () => {
+    setLocale(locale === "en" ? "pt-BR" : "en");
+  };
 
   return (
     <header
@@ -164,10 +125,31 @@ function Nav() {
             onMouseEnter={(e) => { if (active !== item.href.slice(1)) (e.target as HTMLElement).style.color = "#F0F0F5"; }}
             onMouseLeave={(e) => { if (active !== item.href.slice(1)) (e.target as HTMLElement).style.color = "#6B7280"; }}
           >
-            {item.label}
+            {t(`nav.${item.key}`)}
           </a>
         ))}
         <style>{`@media(min-width:640px){nav a{display:block!important}}`}</style>
+
+        <button
+          onClick={toggleLocale}
+          className="mono"
+          style={{
+            background: "transparent",
+            color: "#6B7280",
+            border: "1px solid #1E1E2E",
+            padding: "0.3rem 0.7rem",
+            borderRadius: "5px",
+            fontSize: "0.72rem",
+            cursor: "pointer",
+            letterSpacing: "0.05em",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => { (e.currentTarget).style.borderColor = "#3B82F6"; (e.currentTarget).style.color = "#F0F0F5"; }}
+          onMouseLeave={(e) => { (e.currentTarget).style.borderColor = "#1E1E2E"; (e.currentTarget).style.color = "#6B7280"; }}
+        >
+          {locale === "en" ? "PT-BR" : "EN"}
+        </button>
+
         <a
           href="mailto:hello@dionesalves.dev"
           style={{
@@ -184,7 +166,7 @@ function Nav() {
           onMouseEnter={(e) => ((e.target as HTMLElement).style.background = "#1D4ED8")}
           onMouseLeave={(e) => ((e.target as HTMLElement).style.background = "#3B82F6")}
         >
-          Contact
+          {t("nav_cta")}
         </a>
       </nav>
     </header>
@@ -194,18 +176,19 @@ function Nav() {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
+  const { t } = useLocale();
   const [typed, setTyped] = useState("");
-  const full = "Full Stack Software Engineer";
+  const full = t("hero.title");
 
   useEffect(() => {
     let i = 0;
-    const t = setInterval(() => {
+    const interval = setInterval(() => {
       setTyped(full.slice(0, i + 1));
       i++;
-      if (i === full.length) clearInterval(t);
+      if (i === full.length) clearInterval(interval);
     }, 45);
-    return () => clearInterval(t);
-  }, []);
+    return () => clearInterval(interval);
+  }, [full]);
 
   return (
     <section
@@ -230,7 +213,7 @@ function Hero() {
           className="mono"
           style={{ color: "#3B82F6", fontSize: "0.85rem", letterSpacing: "0.15em", marginBottom: "1.5rem" }}
         >
-          ~/hello
+          {t("hero.greeting")}
         </p>
         <h1
           style={{
@@ -242,7 +225,7 @@ function Hero() {
             marginBottom: "1rem",
           }}
         >
-          Diones Alves
+          {t("hero.name")}
         </h1>
         <h2
           className="mono"
@@ -266,9 +249,8 @@ function Hero() {
             marginBottom: "3rem",
           }}
         >
-          4+ years building enterprise-grade applications, REST APIs, and cloud-based solutions.
-          Currently crafting large-scale financial systems at{" "}
-          <span style={{ color: "#F0F0F5", fontWeight: 600 }}>GFT Technologies</span>.
+          {t("hero.description")}{" "}
+          <span style={{ color: "#F0F0F5", fontWeight: 600 }}>{t("hero.company")}</span>.
         </p>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           <a
@@ -287,7 +269,7 @@ function Hero() {
             onMouseEnter={(e) => { (e.currentTarget).style.background = "#1D4ED8"; (e.currentTarget).style.transform = "translateY(-2px)"; }}
             onMouseLeave={(e) => { (e.currentTarget).style.background = "#3B82F6"; (e.currentTarget).style.transform = "translateY(0)"; }}
           >
-            View Projects →
+            {t("hero.cta_projects")}
           </a>
           <a
             href="mailto:hello@dionesalves.dev"
@@ -305,12 +287,11 @@ function Hero() {
             onMouseEnter={(e) => { (e.currentTarget).style.borderColor = "#3B82F6"; (e.currentTarget).style.transform = "translateY(-2px)"; }}
             onMouseLeave={(e) => { (e.currentTarget).style.borderColor = "#1E1E2E"; (e.currentTarget).style.transform = "translateY(0)"; }}
           >
-            Get in Touch
+            {t("hero.cta_contact")}
           </a>
         </div>
       </motion.div>
 
-      {/* Floating stack badges */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -341,12 +322,13 @@ function Hero() {
 // ─── About ────────────────────────────────────────────────────────────────────
 
 function About() {
+  const { t } = useLocale();
   return (
     <section id="about" style={{ padding: "7rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
       <FadeIn>
-        <SectionLabel>about</SectionLabel>
+        <SectionLabel>{t("about.label")}</SectionLabel>
         <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: "2.5rem", color: "#F0F0F5" }}>
-          Who I am
+          {t("about.title")}
         </h2>
       </FadeIn>
       <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2rem" }}>
@@ -360,29 +342,24 @@ function About() {
             }}
           >
             <p style={{ color: "#9CA3AF", lineHeight: 1.9, fontSize: "1.02rem", marginBottom: "1.2rem" }}>
-              I'm a Full Stack Software Engineer based in Brazil with over 4 years of experience
-              delivering production-grade software for enterprise clients. My work spans backend systems,
-              REST APIs, microservices architecture, and modern frontend applications.
+              {t("about.p1")}
             </p>
             <p style={{ color: "#9CA3AF", lineHeight: 1.9, fontSize: "1.02rem", marginBottom: "1.2rem" }}>
-              At <span style={{ color: "#F0F0F5", fontWeight: 600 }}>GFT Technologies</span>, I work on
-              large-scale financial systems and banking platforms where reliability, security, and
-              performance are non-negotiable. I care deeply about clean architecture, SOLID principles,
-              and writing code that teams can evolve with confidence.
+              {t("about.p2_before")}{" "}
+              <span style={{ color: "#F0F0F5", fontWeight: 600 }}>{t("about.p2_company")}</span>{" "}
+              {t("about.p2_after")}
             </p>
             <p style={{ color: "#9CA3AF", lineHeight: 1.9, fontSize: "1.02rem" }}>
-              I hold certifications in both <span style={{ color: "#F0F0F5" }}>AWS</span> and{" "}
-              <span style={{ color: "#F0F0F5" }}>Azure</span>, and I'm comfortable working across the
-              full stack — from database schema design to pixel-perfect UIs.
+              {t("about.p3")}
             </p>
           </div>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem" }}>
           {[
-            { label: "Years of Experience", value: "4+" },
-            { label: "Current Role", value: "Software Engineer @ GFT" },
-            { label: "Certifications", value: "AWS + Azure" },
-            { label: "Location", value: "Brazil 🇧🇷" },
+            { value: t("about.stat_years_value"), label: t("about.stat_years_label") },
+            { value: t("about.stat_role_value"), label: t("about.stat_role_label") },
+            { value: t("about.stat_certs_value"), label: t("about.stat_certs_label") },
+            { value: t("about.stat_location_value"), label: t("about.stat_location_label") },
           ].map((stat) => (
             <FadeIn key={stat.label} delay={0.15}>
               <div
@@ -411,17 +388,26 @@ function About() {
 
 // ─── Skills ───────────────────────────────────────────────────────────────────
 
+const SKILLS_DATA: Record<string, string[]> = {
+  Backend: ["Java", "Spring Boot", "Node.js", "NestJS", "Express", "REST APIs", "Microservices"],
+  Frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
+  Cloud: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD"],
+  Database: ["PostgreSQL", "MySQL", "MongoDB"],
+  Architecture: ["Clean Architecture", "SOLID", "Event-Driven Architecture"],
+};
+
 function Skills() {
+  const { t } = useLocale();
   return (
     <section id="skills" style={{ padding: "7rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
       <FadeIn>
-        <SectionLabel>skills</SectionLabel>
+        <SectionLabel>{t("skills.label")}</SectionLabel>
         <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: "2.5rem", color: "#F0F0F5" }}>
-          Technical Stack
+          {t("skills.title")}
         </h2>
       </FadeIn>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.2rem" }}>
-        {Object.entries(SKILLS).map(([category, techs], i) => (
+        {Object.entries(SKILLS_DATA).map(([category, techs], i) => (
           <FadeIn key={category} delay={i * 0.07}>
             <div
               style={{
@@ -472,16 +458,27 @@ function Skills() {
 // ─── Projects ────────────────────────────────────────────────────────────────
 
 function Projects() {
+  const { t } = useLocale();
+  const tm = useMessages();
+  const raw = tm("projectItems");
+  const items = (Array.isArray(raw) ? raw : []) as {
+    title: string;
+    description: string;
+    focus: string;
+    tags: string[];
+    color: string;
+  }[];
+
   return (
     <section id="projects" style={{ padding: "7rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
       <FadeIn>
-        <SectionLabel>projects</SectionLabel>
+        <SectionLabel>{t("projects.label")}</SectionLabel>
         <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: "2.5rem", color: "#F0F0F5" }}>
-          Selected Work
+          {t("projects.title")}
         </h2>
       </FadeIn>
       <div style={{ display: "grid", gap: "1.2rem" }}>
-        {PROJECTS.map((project, i) => (
+        {items.map((project, i) => (
           <FadeIn key={project.title} delay={i * 0.08}>
             <div
               style={{
@@ -496,7 +493,6 @@ function Projects() {
               onMouseEnter={(e) => ((e.currentTarget).style.borderColor = project.color)}
               onMouseLeave={(e) => ((e.currentTarget).style.borderColor = "#1E1E2E")}
             >
-              {/* color accent line */}
               <div
                 style={{
                   position: "absolute",
@@ -550,67 +546,95 @@ function Projects() {
 // ─── Experience ───────────────────────────────────────────────────────────────
 
 function Experience() {
+  const { t } = useLocale();
+  const tm = useMessages();
+
+  const raw = tm("experience.items");
+  const items = (Array.isArray(raw) ? raw : []) as {
+    company: string;
+    role: string;
+    type: string;
+    start: string;
+    end: string;
+    duration: string;
+    location: string;
+    description: string;
+    skills: string;
+  }[];
+
   return (
     <section id="experience" style={{ padding: "7rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
       <FadeIn>
-        <SectionLabel>experience</SectionLabel>
+        <SectionLabel>{t("experience.label")}</SectionLabel>
         <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: "3rem", color: "#F0F0F5" }}>
-          Where I've Worked
+          {t("experience.title")}
         </h2>
       </FadeIn>
-      <FadeIn delay={0.1}>
-        <div style={{ display: "flex", gap: "2rem", position: "relative" }}>
-          {/* Timeline line */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#3B82F6", flexShrink: 0, marginTop: "4px" }} />
-            <div style={{ width: "2px", flex: 1, background: "#1E1E2E", marginTop: "4px" }} />
-          </div>
-          <div
-            style={{
-              background: "#13131A",
-              border: "1px solid #1E1E2E",
-              borderRadius: "12px",
-              padding: "2rem",
-              flex: 1,
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1rem" }}>
-              <div>
-                <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "#F0F0F5", marginBottom: "0.25rem" }}>Software Engineer</h3>
-                <p style={{ color: "#3B82F6", fontWeight: 600, fontSize: "0.95rem" }}>GFT Technologies</p>
-              </div>
-              <span
-                className="mono"
-                style={{ fontSize: "0.75rem", color: "#6B7280", background: "#0A0A0F", padding: "0.3rem 0.8rem", borderRadius: "4px", border: "1px solid #1E1E2E", height: "fit-content" }}
-              >
-                Current
-              </span>
+
+      {items.map((exp, index) => (
+        <FadeIn key={exp.company + exp.start} delay={index * 0.1}>
+          <div style={{ display: "flex", gap: "2rem", position: "relative", marginBottom: "2rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#3B82F6", flexShrink: 0, marginTop: "4px" }} />
+              {index < items.length - 1 && (
+                <div style={{ width: "2px", flex: 1, background: "#1E1E2E", marginTop: "4px" }} />
+              )}
             </div>
-            <ul style={{ color: "#9CA3AF", lineHeight: 1.9, paddingLeft: "1.2rem", fontSize: "0.93rem" }}>
-              {[
-                "Developing enterprise-grade applications and banking systems for financial sector clients",
-                "Designing and consuming REST APIs following OpenAPI specs and security best practices",
-                "Building cloud-native solutions on AWS and Azure infrastructure",
-                "Architecting microservices with event-driven patterns for high-throughput workloads",
-                "Collaborating with cross-functional teams on software architecture decisions",
-              ].map((item) => (
-                <li key={item} style={{ marginBottom: "0.4rem" }}>{item}</li>
-              ))}
-            </ul>
+            <div
+              style={{
+                background: "#13131A",
+                border: "1px solid #1E1E2E",
+                borderRadius: "12px",
+                padding: "2rem",
+                flex: 1,
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.75rem" }}>
+                <div>
+                  <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "#F0F0F5", marginBottom: "0.25rem" }}>{exp.role}</h3>
+                  <p style={{ color: "#3B82F6", fontWeight: 600, fontSize: "0.95rem" }}>{exp.company}</p>
+                </div>
+                <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
+                  {exp.end.toLowerCase() === "present" || exp.end.toLowerCase() === "o momento" ? (
+                    <span
+                      className="mono"
+                      style={{ fontSize: "0.75rem", color: "#6B7280", background: "#0A0A0F", padding: "0.3rem 0.8rem", borderRadius: "4px", border: "1px solid #1E1E2E", height: "fit-content" }}
+                    >
+                      {t("experience.current")}
+                    </span>
+                  ) : null}
+                  <span
+                    className="mono"
+                    style={{ fontSize: "0.72rem", color: "#6B7280", background: "#0A0A0F", padding: "0.3rem 0.8rem", borderRadius: "4px", border: "1px solid #1E1E2E", height: "fit-content" }}
+                  >
+                    {exp.start} - {exp.end} · {exp.duration}
+                  </span>
+                </div>
+              </div>
+              {exp.location && (
+                <p style={{ color: "#6B7280", fontSize: "0.82rem", marginBottom: "0.75rem" }}>{exp.location}</p>
+              )}
+              <p style={{ color: "#9CA3AF", lineHeight: 1.9, fontSize: "0.93rem", marginBottom: "0.75rem" }}>
+                {exp.description}
+              </p>
+              <p className="mono" style={{ color: "#6B7280", fontSize: "0.78rem" }}>
+                {exp.skills}
+              </p>
+            </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      ))}
 
       {/* Certifications */}
       <FadeIn delay={0.2}>
         <div style={{ marginTop: "3rem" }}>
           <p className="mono" style={{ fontSize: "0.75rem", color: "#3B82F6", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.2rem" }}>
-            Certifications
+            {t("experience.certifications_title")}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
             {[
-              { name: "AWS Certified", icon: "☁️", color: "#F59E0B" },
-              { name: "Azure Certified", icon: "🔷", color: "#3B82F6" },
+              { name: t("experience.cert_aws"), icon: "☁️", color: "#F59E0B" },
+              { name: t("experience.cert_azure"), icon: "🔷", color: "#3B82F6" },
             ].map((cert) => (
               <div
                 key={cert.name}
@@ -627,7 +651,7 @@ function Experience() {
                 <span style={{ fontSize: "1.8rem" }}>{cert.icon}</span>
                 <div>
                   <p style={{ fontWeight: 600, color: "#F0F0F5" }}>{cert.name}</p>
-                  <p style={{ fontSize: "0.78rem", color: "#6B7280" }}>Cloud Certification</p>
+                  <p style={{ fontSize: "0.78rem", color: "#6B7280" }}>{t("experience.cert_subtitle")}</p>
                 </div>
               </div>
             ))}
@@ -641,6 +665,7 @@ function Experience() {
 // ─── Contact ──────────────────────────────────────────────────────────────────
 
 function Contact() {
+  const { t } = useLocale();
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
@@ -652,13 +677,12 @@ function Contact() {
   return (
     <section id="contact" style={{ padding: "7rem 2rem 10rem", maxWidth: "900px", margin: "0 auto" }}>
       <FadeIn>
-        <SectionLabel>contact</SectionLabel>
+        <SectionLabel>{t("contact.label")}</SectionLabel>
         <h2 style={{ fontSize: "2.2rem", fontWeight: 700, letterSpacing: "-0.03em", marginBottom: "1rem", color: "#F0F0F5" }}>
-          Let's Build Something
+          {t("contact.title")}
         </h2>
         <p style={{ color: "#9CA3AF", lineHeight: 1.8, maxWidth: "520px", marginBottom: "3rem", fontSize: "1rem" }}>
-          Open to new opportunities, freelance projects, or just a technical conversation.
-          Drop a message — I respond within 24 hours.
+          {t("contact.subtitle")}
         </p>
       </FadeIn>
       <FadeIn delay={0.1}>
@@ -676,7 +700,7 @@ function Contact() {
           }}
         >
           <div>
-            <p style={{ fontSize: "0.8rem", color: "#6B7280", marginBottom: "0.4rem" }}>Email</p>
+            <p style={{ fontSize: "0.8rem", color: "#6B7280", marginBottom: "0.4rem" }}>{t("contact.email_label")}</p>
             <p className="mono" style={{ fontSize: "1.05rem", color: "#F0F0F5" }}>hello@dionesalves.dev</p>
           </div>
           <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -694,7 +718,7 @@ function Contact() {
                 transition: "all 0.2s",
               }}
             >
-              {copied ? "✓ Copied!" : "Copy Email"}
+              {copied ? t("contact.copied_btn") : t("contact.copy_btn")}
             </button>
             <a
               href="mailto:hello@dionesalves.dev"
@@ -711,18 +735,17 @@ function Contact() {
               onMouseEnter={(e) => ((e.currentTarget).style.background = "#1D4ED8")}
               onMouseLeave={(e) => ((e.currentTarget).style.background = "#3B82F6")}
             >
-              Send Email →
+              {t("contact.send_btn")}
             </a>
           </div>
         </div>
       </FadeIn>
 
-      {/* Social Links */}
       <FadeIn delay={0.2}>
         <div style={{ marginTop: "2rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           {[
-            { label: "GitHub", url: "https://github.com/dionesalves", icon: "⌥" },
-            { label: "LinkedIn", url: "https://linkedin.com/in/dionesalves", icon: "in" },
+            { label: t("contact.github"), url: "https://github.com/dionesalves", icon: "⌥" },
+            { label: t("contact.linkedin"), url: "https://linkedin.com/in/dionesalves", icon: "in" },
           ].map((link) => (
             <a
               key={link.label}
@@ -758,6 +781,7 @@ function Contact() {
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 function Footer() {
+  const { t } = useLocale();
   return (
     <footer
       style={{
@@ -767,7 +791,7 @@ function Footer() {
       }}
     >
       <p className="mono" style={{ fontSize: "0.78rem", color: "#4B5563" }}>
-        © {new Date().getFullYear()} Diones Alves — Built with Next.js + TypeScript
+        © {new Date().getFullYear()} Diones Alves — {t("footer.credit")}
       </p>
     </footer>
   );
@@ -776,10 +800,11 @@ function Footer() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
+  const { locale } = useLocale();
   return (
     <main>
       <Nav />
-      <Hero />
+      <Hero key={locale} />
       <About />
       <Skills />
       <Projects />
