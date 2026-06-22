@@ -107,7 +107,7 @@ function Nav() {
         className="mono"
         style={{ color: "#3B82F6", fontWeight: 700, fontSize: "1rem", textDecoration: "none", letterSpacing: "-0.02em" }}
       >
-        da<span style={{ color: "#F0F0F5" }}>.dev</span>
+        Diones<span style={{ color: "#F0F0F5" }}>.dev</span>
       </a>
       <nav style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {NAV_ITEMS.map((item) => (
