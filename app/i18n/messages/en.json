@@ -46,13 +46,13 @@
   },
   "projectItems": [
     {
-      "title": "Real-Time Communication Platform",
-      "description": "Full-featured platform with video, audio, and text communication channels. Built with WebRTC for peer-to-peer connections and Socket.IO for signaling and presence.",
-      "focus": "Real-time • P2P • WebSockets",
-      "tags": ["WebRTC", "Socket.IO", "NestJS", "React"],
-      "color": "#3B82F6",
-      "images": ["/projects/real-time-comms/1.svg", "/projects/real-time-comms/2.svg", "/projects/real-time-comms/3.svg"],
-      "repo": ""
+      "title": "App Spotify",
+      "description": "Web platform for music discovery and playback powered by YouTube, with Google OAuth login and playlist/subscription sync. Includes an embedded player (audio/video), search, Prisma-backed session persistence, and automatic token refresh.",
+      "focus": "OAuth • YouTube API • Player",
+      "tags": ["Next.js 16", "React 19", "Prisma", "Google OAuth", "YouTube API"],
+      "color": "#22C55E",
+      "images": ["/projects/app-spotify/1.svg", "/projects/app-spotify/2.svg", "/projects/app-spotify/3.svg"],
+      "repo": "https://github.com/Diones25/app-spotify"
     },
     {
       "title": "Banking API",
