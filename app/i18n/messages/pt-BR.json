@@ -51,7 +51,7 @@
       "focus": "OAuth • YouTube API • Player",
       "tags": ["Next.js 16", "React 19", "Prisma", "Google OAuth", "YouTube API"],
       "color": "#22C55E",
-      "images": ["/projects/app-spotify/1.svg", "/projects/app-spotify/2.svg", "/projects/app-spotify/3.svg"],
+      "images": ["/projects/app-spotify/login.png", "/projects/app-spotify/pagina_inicial.png", "/projects/app-spotify/playlist.png","/projects/app-spotify/artista.png","/projects/app-spotify/playervideo_01.png","/projects/app-spotify/playervideo02.png","/projects/app-spotify/busca.png"],
       "repo": "https://github.com/Diones25/app-spotify"
     },
     {
