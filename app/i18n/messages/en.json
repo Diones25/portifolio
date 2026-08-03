@@ -60,7 +60,13 @@
       "focus": "Full-stack • Docker • Postgres",
       "tags": ["NestJS 11", "React 19", "Prisma", "PostgreSQL", "Docker", "Nginx", "JWT"],
       "color": "#8B5CF6",
-      "images": ["/projects/finans/1.svg", "/projects/finans/2.svg", "/projects/finans/3.svg"],
+      "images": [
+        "/projects/finans/tela login.png",
+        "/projects/finans/tela register.png",
+        "/projects/finans/tela home.png",
+        "/projects/finans/tela cadastrar categoria.png",
+        "/projects/finans/tela cadastrar gasto.png"
+      ],
       "repo": "https://github.com/Diones25/finans"
     },
     {
