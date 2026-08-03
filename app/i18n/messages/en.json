@@ -114,7 +114,12 @@
       "focus": "Automation • Google Ads • AI",
       "tags": ["n8n", "Google Ads API", "OpenAI", "Gmail", "Automation"],
       "color": "#A855F7",
-      "images": ["/projects/google-ads-ai-reporter/1.svg", "/projects/google-ads-ai-reporter/2.svg", "/projects/google-ads-ai-reporter/3.svg"],
+      "images": [
+        "/projects/google-ads-ai-reporter/n8n-google-ads.png",
+        "/projects/google-ads-ai-reporter/1.svg",
+        "/projects/google-ads-ai-reporter/2.svg",
+        "/projects/google-ads-ai-reporter/3.svg"
+      ],
       "repo": "https://github.com/Diones25/google-ads-ai-reporter"
     },
     {
