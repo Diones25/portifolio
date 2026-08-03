@@ -78,13 +78,13 @@
       "repo": "https://github.com/Diones25/upload-s3-aws"
     },
     {
-      "title": "Movie Application",
-      "description": "Performance-first movie discovery app consuming the TMDB API. Built with Next.js for optimal SEO using hybrid rendering — SSG for popular pages, SSR for dynamic routes.",
-      "focus": "SEO • SSR • SSG • Performance",
-      "tags": ["Next.js", "React", "TMDB API"],
+      "title": "App Movies TMDB",
+      "description": "Full-featured web app to explore movies, TV shows, and people using the TMDB API. Rich detail pages (trailers, cast, recommendations), debounced search, pagination/infinite scroll, and React Query caching for great perceived performance. Responsive dark UI.",
+      "focus": "React Query • UX • API",
+      "tags": ["React", "TypeScript", "Vite", "React Query", "Tailwind", "TMDB API"],
       "color": "#F59E0B",
-      "images": ["/projects/movie-app/1.svg", "/projects/movie-app/2.svg"],
-      "repo": ""
+      "images": ["/projects/app-tmdb/1.svg", "/projects/app-tmdb/2.svg", "/projects/app-tmdb/3.svg"],
+      "repo": "https://github.com/Diones25/app-tmdb"
     }
   ],
   "experience": {
