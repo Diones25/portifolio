@@ -101,7 +101,11 @@
       "focus": "IA • SSE • Streaming",
       "tags": ["NestJS", "Next.js", "TypeScript", "SSE", "OpenAI"],
       "color": "#06B6D4",
-      "images": ["/projects/agent-ia-dietas/1.svg", "/projects/agent-ia-dietas/2.svg", "/projects/agent-ia-dietas/3.svg"],
+      "images": [
+        "/projects/agent-ia-dietas/dieta-01.png",
+        "/projects/agent-ia-dietas/dieta-02.png",
+        "/projects/agent-ia-dietas/3.svg"
+      ],
       "repo": "https://github.com/Diones25/agent-ia-dietas"
     },
     {
