@@ -103,6 +103,24 @@
       "color": "#06B6D4",
       "images": ["/projects/agent-ia-dietas/1.svg", "/projects/agent-ia-dietas/2.svg", "/projects/agent-ia-dietas/3.svg"],
       "repo": "https://github.com/Diones25/agent-ia-dietas"
+    },
+    {
+      "title": "Google Ads AI Reporter",
+      "description": "Automated n8n workflow that pulls Google Ads campaign metrics and search terms, analyzes performance bottlenecks with an AI agent (OpenAI), and delivers an HTML report via Gmail. Demonstrates orchestration, data transformation, and practical business automation.",
+      "focus": "Automation • Google Ads • AI",
+      "tags": ["n8n", "Google Ads API", "OpenAI", "Gmail", "Automation"],
+      "color": "#A855F7",
+      "images": ["/projects/google-ads-ai-reporter/1.svg", "/projects/google-ads-ai-reporter/2.svg", "/projects/google-ads-ai-reporter/3.svg"],
+      "repo": "https://github.com/Diones25/google-ads-ai-reporter"
+    },
+    {
+      "title": "NestJS + Kafka",
+      "description": "Practical async messaging example with Apache Kafka using NestJS: a REST API produces messages to a topic and a consumer processes events in real time. Includes docker-compose to run Kafka/Zookeeper locally, payload validation, and e2e tests to cover the end-to-end flow.",
+      "focus": "Kafka • Messaging • Async",
+      "tags": ["NestJS", "Kafka", "Docker Compose", "Microservices", "Jest"],
+      "color": "#EF4444",
+      "images": ["/projects/nestjs-kafka/1.svg", "/projects/nestjs-kafka/2.svg", "/projects/nestjs-kafka/3.svg"],
+      "repo": "https://github.com/Diones25/nestjs-kafka"
     }
   ],
   "experience": {

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0A0A0F"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#13131A" stroke="#1E1E2E" stroke-width="1"/>
+
+  <rect x="60" y="60" width="680" height="40" rx="8" fill="#1E1E2E"/>
+  <text x="80" y="86" font-family="monospace" font-size="13" fill="#F0F0F5" font-weight="bold">POST /producer</text>
+
+  <rect x="60" y="120" width="680" height="320" rx="12" fill="#0A0A0F" stroke="#1E1E2E" stroke-width="1"/>
+  <text x="100" y="160" font-family="monospace" font-size="11" fill="#6B7280">Request body</text>
+
+  <rect x="100" y="180" width="600" height="84" rx="12" fill="#1E1E2E" opacity="0.35"/>
+  <text x="130" y="214" font-family="monospace" font-size="11" fill="#F0F0F5">{</text>
+  <text x="150" y="236" font-family="monospace" font-size="11" fill="#F0F0F5">"content": "Hello, Kafka!",</text>
+  <text x="150" y="258" font-family="monospace" font-size="11" fill="#F0F0F5">"author": "NestJS"</text>
+  <text x="130" y="280" font-family="monospace" font-size="11" fill="#F0F0F5">}</text>
+
+  <rect x="100" y="300" width="260" height="44" rx="12" fill="#EF4444" opacity="0.14" stroke="#EF4444" stroke-width="1"/>
+  <text x="230" y="328" font-family="monospace" font-size="12" fill="#EF4444" text-anchor="middle">ValidationPipe</text>
+
+  <rect x="380" y="300" width="320" height="44" rx="12" fill="#1E1E2E" opacity="0.4"/>
+  <text x="540" y="328" font-family="monospace" font-size="12" fill="#F0F0F5" text-anchor="middle">emit('message-topic')</text>
+
+  <text x="400" y="480" font-family="monospace" font-size="11" fill="#4B5563" text-anchor="middle">Screenshot 2</text>
+</svg>
