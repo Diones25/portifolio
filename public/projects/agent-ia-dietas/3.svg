@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0A0A0F"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#13131A" stroke="#1E1E2E" stroke-width="1"/>
+
+  <text x="80" y="82" font-family="monospace" font-size="14" fill="#F0F0F5" font-weight="bold">Backend / Frontend Split</text>
+
+  <rect x="90" y="140" width="280" height="130" rx="14" fill="#0A0A0F" stroke="#1E1E2E" stroke-width="1"/>
+  <text x="230" y="178" font-family="monospace" font-size="12" fill="#F0F0F5" text-anchor="middle">NestJS</text>
+  <text x="230" y="202" font-family="monospace" font-size="11" fill="#6B7280" text-anchor="middle">SSE controller</text>
+  <text x="230" y="226" font-family="monospace" font-size="11" fill="#6B7280" text-anchor="middle">AI orchestration</text>
+
+  <rect x="430" y="140" width="280" height="130" rx="14" fill="#0A0A0F" stroke="#1E1E2E" stroke-width="1"/>
+  <text x="570" y="178" font-family="monospace" font-size="12" fill="#F0F0F5" text-anchor="middle">Next.js</text>
+  <text x="570" y="202" font-family="monospace" font-size="11" fill="#6B7280" text-anchor="middle">Form + UI</text>
+  <text x="570" y="226" font-family="monospace" font-size="11" fill="#6B7280" text-anchor="middle">Progressive render</text>
+
+  <path d="M370 205 L430 205" stroke="#06B6D4" stroke-width="2"/>
+  <circle cx="400" cy="205" r="4" fill="#06B6D4"/>
+  <text x="400" y="190" font-family="monospace" font-size="10" fill="#06B6D4" text-anchor="middle">SSE</text>
+
+  <rect x="90" y="300" width="620" height="140" rx="14" fill="#0A0A0F" stroke="#1E1E2E" stroke-width="1"/>
+  <text x="400" y="334" font-family="monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">Why it matters</text>
+  <text x="120" y="370" font-family="monospace" font-size="11" fill="#F0F0F5">- Real-time streaming UX (no polling)</text>
+  <text x="120" y="395" font-family="monospace" font-size="11" fill="#F0F0F5">- Clear separation of concerns</text>
+  <text x="120" y="420" font-family="monospace" font-size="11" fill="#F0F0F5">- Typed contracts (TypeScript)</text>
+
+  <text x="400" y="480" font-family="monospace" font-size="11" fill="#4B5563" text-anchor="middle">Screenshot 3</text>
+</svg>

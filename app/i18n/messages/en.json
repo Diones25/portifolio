@@ -94,6 +94,15 @@
         "/projects/app-tmdb/tmdb-08.png"
       ],
       "repo": "https://github.com/Diones25/app-tmdb"
+    },
+    {
+      "title": "AI Diet Agent",
+      "description": "Full-stack app that generates personalized diet plans using AI with real-time streaming via SSE (Server-Sent Events), delivering a ChatGPT-like experience. A NestJS backend orchestrates the generation and streams chunks; a Next.js frontend consumes it with EventSource and renders progressively.",
+      "focus": "AI • SSE • Streaming",
+      "tags": ["NestJS", "Next.js", "TypeScript", "SSE", "OpenAI"],
+      "color": "#06B6D4",
+      "images": ["/projects/agent-ia-dietas/1.svg", "/projects/agent-ia-dietas/2.svg", "/projects/agent-ia-dietas/3.svg"],
+      "repo": "https://github.com/Diones25/agent-ia-dietas"
     }
   ],
   "experience": {
