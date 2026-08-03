@@ -128,7 +128,13 @@
       "focus": "Kafka • Mensageria • Assincrono",
       "tags": ["NestJS", "Kafka", "Docker Compose", "Microservices", "Jest"],
       "color": "#EF4444",
-      "images": ["/projects/nestjs-kafka/1.svg", "/projects/nestjs-kafka/2.svg", "/projects/nestjs-kafka/3.svg"],
+      "images": [
+        "/projects/nestjs-kafka/producer.png",
+        "/projects/nestjs-kafka/log_consummer.png",
+        "/projects/nestjs-kafka/1.svg",
+        "/projects/nestjs-kafka/2.svg",
+        "/projects/nestjs-kafka/3.svg"
+      ],
       "repo": "https://github.com/Diones25/nestjs-kafka"
     }
   ],
