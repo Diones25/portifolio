@@ -69,7 +69,12 @@
       "focus": "AWS S3 • Signed URLs • Upload",
       "tags": ["NestJS", "AWS SDK v3", "S3", "Next.js", "TypeScript", "Multer"],
       "color": "#F97316",
-      "images": ["/projects/upload-s3-aws/1.svg", "/projects/upload-s3-aws/2.svg", "/projects/upload-s3-aws/3.svg"],
+      "images": [
+        "/projects/upload-s3-aws/upload-success-real-1.png",
+        "/projects/upload-s3-aws/upload-success-real-2.png",
+        "/projects/upload-s3-aws/gallery-real.png",
+        "/projects/upload-s3-aws/3.svg"
+      ],
       "repo": "https://github.com/Diones25/upload-s3-aws"
     },
     {
