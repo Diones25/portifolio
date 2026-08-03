@@ -83,7 +83,16 @@
       "focus": "React Query • UX • API",
       "tags": ["React", "TypeScript", "Vite", "React Query", "Tailwind", "TMDB API"],
       "color": "#F59E0B",
-      "images": ["/projects/app-tmdb/1.svg", "/projects/app-tmdb/2.svg", "/projects/app-tmdb/3.svg"],
+      "images": [
+        "/projects/app-tmdb/tmdb-01.png", 
+        "/projects/app-tmdb/tmdb-02.png", 
+        "/projects/app-tmdb/tmdb-03.png",
+        "/projects/app-tmdb/tmdb-04.png",
+        "/projects/app-tmdb/tmdb-05.png",
+        "/projects/app-tmdb/tmdb-06.png",
+        "/projects/app-tmdb/tmdb-07.png",
+        "/projects/app-tmdb/tmdb-08.png"
+      ],
       "repo": "https://github.com/Diones25/app-tmdb"
     }
   ],
