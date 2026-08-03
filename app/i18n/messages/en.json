@@ -55,13 +55,13 @@
       "repo": "https://github.com/Diones25/app-spotify"
     },
     {
-      "title": "Banking API",
-      "description": "Secure RESTful API for financial operations with robust authentication flows, JWT refresh token rotation, and Swagger documentation for enterprise consumers.",
-      "focus": "Auth • Security • API Design",
-      "tags": ["NestJS", "PostgreSQL", "JWT", "Docker", "Swagger"],
+      "title": "Finans",
+      "description": "Full-stack personal finance app with JWT auth, categories, paginated expenses, and a construction-costs module. Docker Compose setup (Postgres + NestJS + Nginx + React), Prisma migrations on startup, and a modern UI built with React Query + Tailwind/Shadcn.",
+      "focus": "Full-stack • Docker • Postgres",
+      "tags": ["NestJS 11", "React 19", "Prisma", "PostgreSQL", "Docker", "Nginx", "JWT"],
       "color": "#8B5CF6",
-      "images": ["/projects/banking-api/1.svg", "/projects/banking-api/2.svg"],
-      "repo": ""
+      "images": ["/projects/finans/1.svg", "/projects/finans/2.svg", "/projects/finans/3.svg"],
+      "repo": "https://github.com/Diones25/finans"
     },
     {
       "title": "Microservices Platform",
