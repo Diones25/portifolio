@@ -64,13 +64,13 @@
       "repo": "https://github.com/Diones25/finans"
     },
     {
-      "title": "Plataforma de Microsserviços",
-      "description": "Sistema distribuído com comunicação orientada a eventos entre serviços independentes. Cada serviço possui seu próprio banco de dados e se comunica de forma assíncrona via filas de mensagens.",
-      "focus": "Sistemas Distribuídos • Event-Driven",
-      "tags": ["NestJS", "RabbitMQ", "Docker", "PostgreSQL"],
-      "color": "#10B981",
-      "images": ["/projects/microservices/1.svg", "/projects/microservices/2.svg", "/projects/microservices/3.svg"],
-      "repo": ""
+      "title": "Upload S3 AWS",
+      "description": "Aplicacao full-stack para upload e gerenciamento de arquivos no Amazon S3. Backend em NestJS com validacao de arquivos, rotas para upload unico/multiplo e geracao de signed URLs; frontend em Next.js com drag-and-drop, listagem e preview. Estrutura em monorepo com camadas bem separadas.",
+      "focus": "AWS S3 • Signed URLs • Upload",
+      "tags": ["NestJS", "AWS SDK v3", "S3", "Next.js", "TypeScript", "Multer"],
+      "color": "#F97316",
+      "images": ["/projects/upload-s3-aws/1.svg", "/projects/upload-s3-aws/2.svg", "/projects/upload-s3-aws/3.svg"],
+      "repo": "https://github.com/Diones25/upload-s3-aws"
     },
     {
       "title": "Aplicativo de Filmes",
