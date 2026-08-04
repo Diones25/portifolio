@@ -152,7 +152,7 @@ function Nav() {
         </button>
 
         <a
-          href="mailto:hello@dionesalves.dev"
+          href="mailto:pereiradiones987@gmail.com"
           style={{
             background: "#3B82F6",
             color: "#fff",
@@ -273,7 +273,7 @@ function Hero() {
             {t("hero.cta_projects")}
           </a>
           <a
-            href="mailto:hello@dionesalves.dev"
+            href="mailto:pereiradiones987@gmail.com"
             style={{
               border: "1px solid #1E1E2E",
               color: "#F0F0F5",
@@ -731,7 +731,7 @@ function Contact() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("hello@dionesalves.dev");
+    navigator.clipboard.writeText("pereiradiones987@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -763,7 +763,7 @@ function Contact() {
         >
           <div>
             <p style={{ fontSize: "0.8rem", color: "#6B7280", marginBottom: "0.4rem" }}>{t("contact.email_label")}</p>
-            <p className="mono" style={{ fontSize: "1.05rem", color: "#F0F0F5" }}>hello@dionesalves.dev</p>
+            <p className="mono" style={{ fontSize: "1.05rem", color: "#F0F0F5" }}>pereiradiones987@gmail.com</p>
           </div>
           <div style={{ display: "flex", gap: "0.75rem" }}>
             <button
@@ -783,7 +783,7 @@ function Contact() {
               {copied ? t("contact.copied_btn") : t("contact.copy_btn")}
             </button>
             <a
-              href="mailto:hello@dionesalves.dev"
+              href="mailto:pereiradiones987@gmail.com"
               style={{
                 background: "#3B82F6",
                 color: "#fff",
