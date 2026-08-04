@@ -22,13 +22,13 @@
     "p2_before": "At",
     "p2_company": "GFT Technologies",
     "p2_after": ", I work on large-scale financial systems and banking platforms where reliability, security, and performance are non-negotiable. I care deeply about clean architecture, SOLID principles, and writing code that teams can evolve with confidence.",
-    "p3": "I hold certifications in both AWS and Azure, and I'm comfortable working across the full stack — from database schema design to pixel-perfect UIs.",
+    "p3": "I hold AWS Cloud Practitioner and Azure AZ-900 certifications, and I'm comfortable working across the full stack — from database schema design to pixel-perfect UIs.",
     "stat_years_label": "Years of Experience",
     "stat_years_value": "4+",
     "stat_role_label": "Current Role",
     "stat_role_value": "Software Engineer @ GFT",
     "stat_certs_label": "Certifications",
-    "stat_certs_value": "AWS + Azure",
+    "stat_certs_value": "AWS CP + AZ-900",
     "stat_location_label": "Location",
     "stat_location_value": "Brazil 🇧🇷"
   },
@@ -149,8 +149,8 @@
     "title": "Where I've Worked",
     "current": "Current",
     "certifications_title": "Certifications",
-    "cert_aws": "AWS Certified",
-    "cert_azure": "Azure Certified",
+    "cert_aws": "AWS Cloud Practitioner",
+    "cert_azure": "Azure AZ-900",
     "cert_subtitle": "Cloud Certification",
     "items": [
       {
