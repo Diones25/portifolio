@@ -13,6 +13,7 @@
     "description": "Mais de 4 anos construindo aplicações corporativas, REST APIs e soluções em nuvem. Atualmente desenvolvendo sistemas financeiros de grande porte na",
     "company": "GFT Technologies",
     "cta_projects": "Ver Projetos →",
+    "cta_cv": "Baixar CV ↓",
     "cta_contact": "Entre em Contato"
   },
   "about": {
@@ -24,7 +25,7 @@
     "p2_after": ", trabalho em sistemas financeiros e plataformas bancárias de grande escala onde confiabilidade, segurança e performance são inegociáveis. Me importo profundamente com arquitetura limpa, princípios SOLID e escrever código que as equipes possam evoluir com confiança.",
     "p3": "Possuo certificações AWS Cloud Practitioner e Azure AZ-900, e me sinto confortável trabalhando em todo o stack — desde design de esquemas de banco de dados até UIs com pixels perfeitos.",
     "stat_years_label": "Anos de Experiência",
-    "stat_years_value": "4+",
+    "stat_years_value": "6+",
     "stat_role_label": "Cargo Atual",
     "stat_role_value": "Software Engineer @ GFT",
     "stat_certs_label": "Certificações",

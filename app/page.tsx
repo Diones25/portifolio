@@ -273,6 +273,25 @@ function Hero() {
             {t("hero.cta_projects")}
           </a>
           <a
+            href="/Diones_Pereira_Backend_NodeJS_Developer_ATS.pdf"
+            download
+            style={{
+              border: "1px solid #1E1E2E",
+              color: "#F0F0F5",
+              padding: "0.75rem 1.75rem",
+              borderRadius: "8px",
+              fontWeight: 600,
+              textDecoration: "none",
+              fontSize: "0.95rem",
+              transition: "border-color 0.2s, transform 0.2s, color 0.2s",
+              display: "inline-block",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget).style.borderColor = "#22C55E"; (e.currentTarget).style.color = "#22C55E"; (e.currentTarget).style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { (e.currentTarget).style.borderColor = "#1E1E2E"; (e.currentTarget).style.color = "#F0F0F5"; (e.currentTarget).style.transform = "translateY(0)"; }}
+          >
+            {t("hero.cta_cv")}
+          </a>
+          <a
             href="mailto:pereiradiones987@gmail.com"
             style={{
               border: "1px solid #1E1E2E",
