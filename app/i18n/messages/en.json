@@ -143,6 +143,21 @@
         "/projects/nestjs-kafka/3.svg"
       ],
       "repo": "https://github.com/Diones25/nestjs-kafka"
+    },
+    {
+      "title": "Fluentify",
+      "description": "Full-stack English-learning platform (NestJS + React monorepo) with an AI tutor, personalized study plans, and speech practice. The backend combines SSE streaming chat, BullMQ queues for plan generation, SM-2 spaced repetition, and hardened auth — refresh-token rotation in HttpOnly cookies, Google Sign-In, and anti-IDOR. The frontend uses React 19, Web Speech API for pronunciation scoring, and React Query.",
+      "focus": "AI Tutor • SSE • Monorepo",
+      "tags": ["NestJS 12", "React 19", "Prisma", "PostgreSQL", "BullMQ", "OpenAI", "SSE"],
+      "color": "#6366F1",
+      "images": [
+        "/projects/fluentify/onboarding.png",
+        "/projects/fluentify/home.png",
+        "/projects/fluentify/tutor.png",
+        "/projects/fluentify/progress.png",
+        "/projects/fluentify/mission.png"
+      ],
+      "repo": "https://github.com/Diones25/fluentify"
     }
   ],
   "experience": {
